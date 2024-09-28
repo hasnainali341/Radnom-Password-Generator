@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strong Password Generator</title>
+    <link rel="shortcut icon" href="assets/tech shield security logo design template .jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="main-nav">
+                <div class="logo"><a href="#">Code By Hasnain</a></div>
+                <div class="header-links">
+                    <a href="#">solutions</a>
+                    <a href="#">who are we</a>
+                    <a href="#">resources</a>
+                </div>
+                <div class="login-signup">
+                    <button>Sign In</button>
+                    <button>Sign Up</button>
+                </div>
+            </div>
+            <div class="mobile-nav">
+                <div class="logo"><a href="https://github.com/hasnainali341" target="_blank">Code By Hasnain</a></div>
+                <div class="bars" id="bars">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <div class="mobile-header-links" anchor="bars">
+                    <a href="#">solutions</a>
+                    <a href="#">who are we</a>
+                    <a href="#">resources</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="section" id="hero-sec">
+            <h1>Instantly generate a secure, random password with the LastPass online tool</h1>
+            <p>Use our online password generator tool to instantly create a secure, random password.
+            </p>
+            <div class="password-sec">
+                <input type="text" name="password" id="password" minlength="1" maxlength="50">
+                <div id="icons">
+                    <abbr title="Copy" id="copy-icon" onclick="copyFunction()"><img src="assets/copy-icon.svg" alt=""></abbr>
+                    <abbr title="Generate new password" id="generate-new-password-icon"><img src="assets/regenerate-password-icon.svg" alt=""></abbr>
+                    </div>
+                    <meter value="0" min="0" max="4" low="1" high="3" optimum="4" id="meter"></meter>
+            </div>
+            <div class="advance-settings" id="advance-settings">
+                <h2>Customize your password</h2>
+                <div class="left" id="left">
+                    <p>Password Length</p>
+                    <div id="password-inputs">
+                        <input type="number" name="Length" id="length" min="1" max="50" value="16">
+                        <input type="range" step="1" name="range" id="range" inputmode="numeric" min="0" max="50" value="16">
+                    </div>
+                </div>
+                <div class="right" id="right">
+                    <div class="radio-inputs">
+                        <div>
+                            <input type="radio" name="option" id="first-option">
+                            <label for="first-option">Easy to say</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="option" id="second-option">
+                            <label for="second-option">Easy to read</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="option" id="third-option" checked>
+                            <label for="third-option">All characters</label>
+                        </div>
+                    </div>
+                    <div class="checkbox-inputs">
+                        <div>
+                            <input type="checkbox" name="uppercase" id="uppercase" checked>
+                            <label for="uppercase">Uppercase</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="lowercase" id="lowercase" checked>
+                            <label for="lowercase">Lowercase</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="numbers" id="numbers" checked>
+                            <label for="numbers">Numbers</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="symbols" id="symbols" checked>
+                            <label for="symbols">Symbols</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <h3>Socials</h3>
+        <a href="https://github.com/hasnainali341" target="_blank"><img src="assets/github-icon.svg"></a>
+        <img src="assets/linkedin-icon.svg">
+        <img src="assets/fb-icon.svg">
+        <img src="assets/insta-icon.svg">
+        <img src="assets/youtube.svg">
+        <div class="copyright">
+            <p><b>&copy; Hasnain Ali</b></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

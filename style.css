@@ -1,0 +1,452 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", system-ui;
+}
+body {
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+/* main-nav bar */
+.main-nav {
+  width: 100vw;
+  padding: 10px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+nav a {
+  text-decoration: none;
+  color: black;
+}
+nav .logo {
+  font-size: clamp(0.8em, 1.1vw, 4em);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.main-nav .header-links {
+  display: flex;
+  gap: 30px;
+  font-weight: 500;
+}
+.main-nav .login-signup button {
+  padding: 8px 20px;
+  background: transparent;
+  border: 2px solid;
+  border-radius: 30px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.main-nav .login-signup button:nth-child(2) {
+  background: #000;
+  color: #fff;
+}
+
+/* mobile-nav */
+.mobile-nav {
+  display: none;
+  position: relative;
+  height: 24px;
+  padding: 10px 20px;
+  justify-content: space-between;
+}
+.bars {
+  cursor: pointer;
+}
+.bars .bar {
+  width: 25px;
+  height: 3px;
+  margin-bottom: 6px;
+  background-color: #000;
+  transition: all 0.3s ease;
+}
+.mobile-nav.active .bars .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.mobile-nav.active .bars .bar:nth-child(2) {
+  opacity: 0;
+}
+.mobile-nav.active .bars .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+.mobile-header-links {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  flex-direction: column;
+  background-color: white;
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  width: fit-content;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: max-height 0.6s ease, opacity 0.6s ease, padding 0.6s ease;
+  padding: 10px;
+  font-size: 1rem;
+}
+.mobile-header-links a {
+  display: block;
+  padding: 5px 0;
+  font-weight: 500;
+  text-align: right;
+}
+.mobile-header-links.show {
+  display: block;
+  max-height: 500px;
+  opacity: 1;
+}
+
+@media screen and (max-width: 830px) {
+  .main-nav {
+    display: none;
+  }
+  .mobile-nav {
+    display: flex;
+  }
+}
+
+/* Hero Sections */
+#hero-sec {
+  width: min(2000px, 90vw);
+  padding: 8rem 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 16px;
+}
+#hero-sec h1 {
+  font-size: 2.5vw;
+}
+#hero-sec h2 {
+  font-size: 1.5vw;
+}
+#hero-sec p {
+  font-size: 1.1vw;
+}
+
+/* Password section */
+.password-sec {
+  position: relative;
+  width: 50vw;
+  aspect-ratio: 1 / 0.15;
+  background: #fff;
+  margin: auto;
+  margin-top: 1.2em;
+  display: flex;
+  align-items: center;
+  box-shadow: 1px 1px 10px #5555;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 15px;
+  overflow: hidden;
+}
+#password {
+  width: 85%;
+  padding: 0 20px;
+  font-size: 1.5em;
+  letter-spacing: 0.25px;
+  outline: none;
+  border: none;
+  position: absolute;
+  font-weight: 500;
+}
+#icons {
+  position: absolute;
+  width: fit-content;
+  right: 5px;
+  border-left: 1px solid #5555;
+}
+[title] {
+  cursor: pointer;
+}
+.password-sec meter {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .password-sec {
+    font-size: 12px;
+  }
+  [title] img {
+    width: 1.7em;
+  }
+  #password {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 420px) {
+  .password-sec {
+    font-size: 8px;
+    border-radius: 5px 5px 0 0;
+  }
+  [title] img {
+    width: 1em;
+  }
+  #password {
+    width: 90%;
+    padding: 5px;
+  }
+}
+
+/* Advance Settings */
+#advance-settings {
+  width: 50vw;
+  padding: 30px;
+  padding-bottom: 40px;
+  box-shadow: 1px 1px 10px #5555;
+  margin: 1.2em auto;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  text-align: left;
+}
+#advance-settings h2 {
+  grid-column: 1 / 3;
+  border-bottom: 2px solid #5555;
+}
+#left p {
+  font-weight: 500;
+}
+#left #password-inputs {
+  margin-top: 0.5em;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#left #password-inputs input[type="number"] {
+  padding: 5px;
+  outline: none;
+  font-size: 1em;
+  font-weight: 500;
+}
+#left #range {
+  width: 50%;
+}
+#right {
+  width: 100%;
+  display: flex;
+}
+#right .radio-inputs {
+  width: 50%;
+}
+#right .checkbox-inputs {
+  width: 50%;
+}
+#right .radio-inputs div,
+#right .checkbox-inputs div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#right label {
+  font-size: 1.2vw;
+}
+
+@media screen and (min-width: 2300px) {
+  .password-sec {
+    width: 100%;
+  }
+  #password {
+    padding: 0 60px;
+    font-size: 6em;
+  }
+  #icons img {
+    width: 7em;
+  }
+  #advance-settings {
+    margin-top: 3em;
+    width: 100%;
+  }
+  #advance-settings #left input[type="number"] {
+    width: 20%;
+    font-size: 3em;
+  }
+  #advacne-settings #left #range {
+    font-weight: 900;
+  }
+  [type="radio"],
+  [type="checkbox"] {
+    transform: scale(2);
+    margin-right: 1em;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .password-sec {
+    aspect-ratio: 1 / 0.1;
+  }
+}
+@media screen and (max-width: 767px) {
+  #left {
+    grid-column: 1 / 3;
+  }
+  #right {
+    grid-column: 1 / 3;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  #right .radio-inputs div,
+  #right .checkbox-inputs div {
+    margin-bottom: 0.5em;
+  }
+  #left #password-inputs input[type="number"] {
+    font-size: 0.7em;
+  }
+}
+@media screen and (max-width: 400px) {
+  #left #password-inputs input[type="number"] {
+    font-size: 0.5em;
+    width: 40px;
+  }
+}
+
+/* footer */
+footer {
+  padding: 60px 60px 10px 60px;
+  pointer-events: none;
+}
+footer h2,
+img {
+  pointer-events: all;
+  cursor: pointer;
+  margin-top: 1em;
+}
+footer .copyright {
+  margin-top: 2em;
+}
+
+/* Additional Media Queries */
+@media screen and (max-width: 320px) {
+  body {
+    font-size: 14px; /* Slightly smaller font for very small screens */
+  }
+  .main-nav {
+    padding: 10px 20px; /* Reduce padding */
+  }
+  #hero-sec h1 {
+    font-size: 5vw; /* Adjust hero text size */
+  }
+  #hero-sec h2 {
+    font-size: 4vw; /* Adjust subheading size */
+  }
+  #hero-sec p {
+    font-size: 3vw; /* Adjust paragraph size */
+  }
+  .password-sec {
+    width: 90vw; /* Full width on very small screens */
+  }
+  #advance-settings {
+    width: 90vw;
+    padding: 15px; /* Reduce padding for smaller screens */
+    grid-template-columns: 1fr; /* Stack items */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main-nav {
+    padding: 10px 15px; /* Further reduce nav padding */
+  }
+  #hero-sec h1 {
+    font-size: 6vw; /* Make the heading more responsive */
+  }
+  #advance-settings {
+    gap: 10px; /* Reduce the gap between items */
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #advance-settings {
+    grid-template-columns: repeat(2, 1fr); /* Maintain two-column layout */
+  }
+  #left {
+    grid-column: 1 / 3; /* Stack left section */
+  }
+  #right {
+    grid-column: 1 / 3; /* Stack right section */
+    flex-direction: column; /* Column layout for smaller screens */
+  }
+}
+
+/* Specific adjustments for tablet devices */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .main-nav {
+    padding: 10px 40px; /* Adjust padding for tablet */
+  }
+  #hero-sec {
+    padding: 6rem 0; /* Adjust hero padding */
+  }
+  .password-sec {
+    width: 60vw; /* Slightly wider password section */
+  }
+}
+
+/* Adjustments for landscape orientation */
+@media screen and (orientation: landscape) and (max-width: 768px) {
+  .mobile-nav {
+    padding: 10px 15px; /* Adjust mobile nav for landscape */
+  }
+  #hero-sec h1,
+  #hero-sec h2,
+  #hero-sec p {
+    font-size: 5vw; /* Adjust font size in landscape */
+  }
+}
+footer {
+  padding: 40px 60px; /* Reduced padding for better spacing */
+  background-color: #f8f8f8; /* Light background for footer */
+  text-align: center; /* Centered text */
+}
+footer h3 {
+  margin-bottom: 20px; /* Space below the heading */
+  font-size: 1.5em; /* Heading size */
+}
+footer a {
+  margin: 0 10px; /* Space between social icons */
+}
+footer img {
+  width: 30px; /* Consistent icon size */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease; /* Hover effect */
+}
+footer img:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+footer .copyright {
+  margin-top: 20px; /* Space above copyright text */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+  footer {
+    padding: 30px 20px; /* Reduce padding on small screens */
+  }
+  footer h3 {
+    font-size: 1.2em; /* Smaller heading size */
+  }
+  footer img {
+    width: 25px; /* Smaller icon size on small screens */
+  }
+}
+/* Footer adjustments */
+@media screen and (max-width: 400px) {
+  footer h3 {
+    font-size: 1em; /* Further reduce heading size */
+  }
+  footer img {
+    width: 20px; /* Even smaller icon size */
+  }
+}
